@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.entities.Order;
+import app.entities.Coffee;
 import app.model.AppModel;
 import app.view.AppView;
 
@@ -15,11 +15,11 @@ public class AppController {
         if (option == 0) {
             view.getOutput("App closed");
         } else {
-            Order order = model.getOrder(option);
-            if (order == null) {
+            Coffee coffee = model.getOrder(option);
+            if (coffee == null) {
                 view.getOutput("No such option");
             } else {
-                view.getOutput(format("Your %s. Enjoy :)", order.getCoffee()));
+                view.getOutput(format("Your %s. Enjoy :)", coffee.getName()));
             }
             handleData();
         }
